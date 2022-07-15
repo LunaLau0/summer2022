@@ -22,3 +22,27 @@ scp /Users/luna/Downloads/yd.zip luna@124.71.156.199:/home/luna/sql_files &
 
 sudo apt-get install unzip  
 unzip sql_files
+
+mysql -u username -p database_name < file.sql
+
+mysql -u root -p yd < /home/luna/yd/217.sql
+mysql -u root -p yd < /home/luna/yd/218.sql
+
+
+mysql -u root yd < /home/luna/yd/device.sql
+mysql -u root yd < /home/luna/yd/electricts.sql
+mysql -u root yd < /home/luna/yd/unit.sql
+mysql -u root yd < /home/luna/yd/unitdevice.sql
+mysql -u root yd < /home/luna/yd/device.sql
+
+
+# 本地配置mysql环境，完成数据重构编辑
+brew install mysql  
+```
+(base) ➜  ~ mysql -v
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
+```
+该报错源于:  
+You'll need to start MySQL before you can use the  ```mysql``` command on your terminal. To do this, run ```brew services start mysql```. By default, brew installs the MySQL database without a root password.  
+brew services start mysql  
+mysql -uroot  
