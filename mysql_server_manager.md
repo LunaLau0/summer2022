@@ -44,5 +44,14 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mys
 ```
 该报错源于:  
 You'll need to start MySQL before you can use the  ```mysql``` command on your terminal. To do this, run ```brew services start mysql```. By default, brew installs the MySQL database without a root password.  
+
 brew services start mysql  
+brew services stop mysql
+brew services restart mysql  
+
 mysql -uroot  
+mysql -u root yd < /Users/luna/Downloads/yd/device.sql
+mysql -u root yd < /Users/luna/Downloads/yd/electricts.sql
+mysql -u root yd < /Users/luna/Downloads/yd/unit.sql
+mysql -u root yd < /Users/luna/Downloads/yd/unitdevice.sql
+mysql -u root yd < //Users/luna/Downloads/yd/device.sql
