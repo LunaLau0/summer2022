@@ -54,4 +54,4 @@ mysql -u root yd < /Users/luna/Downloads/yd/device.sql
 mysql -u root yd < /Users/luna/Downloads/yd/electricts.sql
 mysql -u root yd < /Users/luna/Downloads/yd/unit.sql
 mysql -u root yd < /Users/luna/Downloads/yd/unitdevice.sql
-mysql -u root yd < //Users/luna/Downloads/yd/device.sql
+mysql -u root yd < /Users/luna/Downloads/yd/device.sql
