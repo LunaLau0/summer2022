@@ -49,9 +49,53 @@ brew services start mysql
 brew services stop mysql
 brew services restart mysql  
 
-mysql -uroot  
+在本地mysql导入数据：  
+```
 mysql -u root yd < /Users/luna/Downloads/yd/device.sql
 mysql -u root yd < /Users/luna/Downloads/yd/electricts.sql
 mysql -u root yd < /Users/luna/Downloads/yd/unit.sql
 mysql -u root yd < /Users/luna/Downloads/yd/unitdevice.sql
 mysql -u root yd < /Users/luna/Downloads/yd/device.sql
+```
+
+由于本地使用code打开226.sql时反复报错，更改使用remote vim来replace sql file context  
+
+
+# remote edit/replace <table_name> in files, and read into mysql
+## vim replace方法
+Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+:%s/<table_name>/electricts2110/g
+
+
+For example, if we want to rename example1.txt into example2.txt, we would use:  
+mv example1.txt example2.txt
+
+确认原文档内容：  
+1. electrics.sql是表格结构，CREATE TABLE `electricts226`   
+2. 226.sql只包含数据，不包含注释，从头至尾只有INSERT INTO ...
+3. query -> ^c直接查看行数，与#.sql行数一致，即表示数据导入完成
+
+由于读取数据后发现行数对应不上，应该是没读完就卡死了，所以drop table重新导入  
+drop table electrics226;  
+cd ../home/luna/yd  
+mv electrics.sql electrics226.sql  
+为了对后续electric表格进行区分（复制12个表格结构后），把原来的electrics.sql重命名为electrics226.sql  
+
+mysql -u root yd < /home/luna/yd/electricts226.sql  
+
+## 复制elec226表格结构  
+CREATE TABLE electricts217 LIKE electricts226;
+create table electricts219 like electricts226;
+
+1. 217 990378 lines
+2. 218 1042804 lines
+3. 219 1024534 lines
+4. 2110 1156140 lines
+5. 2111 
+
+
+# 用python的flask+tornado搭建一个获取数据的API
+use ```pip3``` instead of ```pip```, although all the instrucutons said "pip"  
+pip3 install flask
+pip3 install tornado
+
