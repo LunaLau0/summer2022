@@ -63,8 +63,9 @@ mysql -u root yd < /Users/luna/Downloads/yd/device.sql
 
 # remote edit/replace <table_name> in files, and read into mysql
 ## vim replace方法
-Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
-:%s/<table_name>/electricts2110/g
+
+```:%s/<table_name>/electricts227/g```  
+把该文件中所有的<table_name>更换为electricts227
 
 
 For example, if we want to rename example1.txt into example2.txt, we would use:  
@@ -84,18 +85,34 @@ mv electrics.sql electrics226.sql
 mysql -u root yd < /home/luna/yd/electricts226.sql  
 
 ## 复制elec226表格结构  
-CREATE TABLE electricts217 LIKE electricts226;
+CREATE TABLE electricts217 LIKE electricts226;  
 create table electricts219 like electricts226;
 
 1. 217 990378 lines
 2. 218 1042804 lines
 3. 219 1024534 lines
 4. 2110 1156140 lines
-5. 2111 
+5. 2111 1146799 lines
+6. 2112 1249983 lines
+7. 221 1255691 lines
+8. 222 1130067 lines
+9. 223 1227214
+10. 224 1067753
+11. 225 1236300
+12. 227 226837  
 
+根据观察，平均每个sql分表需要20-30分钟读取，因此可以使用screen命令来运行，减少需要手动在窗口前等待的时间  
+```
+mysql -u root yd < /home/luna/yd/223.sql
+mysql -u root yd < /home/luna/yd/224.sql
+mysql -u root yd < /home/luna/yd/225.sql
+mysql -u root yd < /home/luna/yd/227.sql
+```
 
-# 用python的flask+tornado搭建一个获取数据的API
+**以上，对mysql中yd数据的搭建全部完成，接下来赋予guest访问权限，赋予luna等价root的权限**  
+参考链接为：  
+<https://www.cnblogs.com/richardzhu/p/3318595.html>
+
+# 用python的Django搭建一个获取数据的API
 use ```pip3``` instead of ```pip```, although all the instrucutons said "pip"  
-pip3 install flask
-pip3 install tornado
 
