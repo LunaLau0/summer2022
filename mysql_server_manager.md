@@ -113,6 +113,15 @@ mysql -u root yd < /home/luna/yd/227.sql
 参考链接为：  
 <https://www.cnblogs.com/richardzhu/p/3318595.html>
 
+
 # 用python的Django搭建一个获取数据的API
 use ```pip3``` instead of ```pip```, although all the instrucutons said "pip"  
 
+## get start with Django
+### install the Python database bindings
+<https://docs.djangoproject.com/en/4.0/ref/databases/#mysql-notes>  
+MySQL DB API Drivers  
+
+## higher-quality doc than the official stuff
+<https://developer.mozilla.org/zh-CN/docs/learn>  
+<https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Django/Introduction>
