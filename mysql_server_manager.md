@@ -124,4 +124,5 @@ MySQL DB API Drivers
 
 ## higher-quality doc than the official stuff
 <https://developer.mozilla.org/zh-CN/docs/learn>  
-<https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Django/Introduction>
+<https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Django/Introduction>  
+read
