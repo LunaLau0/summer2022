@@ -125,4 +125,28 @@ MySQL DB API Drivers
 ## higher-quality doc than the official stuff
 <https://developer.mozilla.org/zh-CN/docs/learn>  
 <https://developer.mozilla.org/zh-CN/docs/learn/Server-side/Django/Introduction>  
-read
+
+
+# 可视化图表的设计
+## 解读数据结构
+一、简单描述表结构，字段类型
+
+desc tabl_name;
+
+显示表结构，字段类型，主键，是否为空等属性，但不显示外键。
+
+二、查询表中列的注释信息
+
+select * from information_schema.columns
+
+where table_schema = 'db'  #表所在数据库
+
+and table_name = 'tablename' ; #你要查的表
+
+三、查看表的注释
+
+select table_name,table_comment from information_schema.tables  where table_schema = 'yd' and table_name ='device'
+
+使用count统计每个企业的设备数量
+
+select count('DeviceId') from unitdevice where 'UnitId' = ;
