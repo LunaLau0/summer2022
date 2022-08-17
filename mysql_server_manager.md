@@ -150,3 +150,14 @@ select table_name,table_comment from information_schema.tables  where table_sche
 使用count统计每个企业的设备数量
 
 select count('DeviceId') from unitdevice where 'UnitId' = ;
+
+
+
+scp /Users/luna/Downloads/yd-relation.zip luna@124.71.156.199:/home/luna/sql_files
+
+mv [options] [source] [destination]
+
+mysql -u root yd < /home/luna/yd-relation/ep_unitoutunitgroup_new.sql
+mysql -u root yd < /home/luna/yd-relation/unit_new2.sql
+mysql -u root yd < /home/luna/yd-relation/unitindeviceextend_new.sql
+mysql -u root yd < /home/luna/yd-relation/unitlink_new.sql
